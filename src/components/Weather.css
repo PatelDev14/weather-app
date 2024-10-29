@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-.weather{
+/* Main weather container */
+.weather {
     place-self: center;
     padding: 40px;
     border-radius: 10px;
@@ -9,89 +9,80 @@
     align-items: center;
 }
 
-.search-bar{
-    display: flex;
-    align-items: center;
-    gap: 12px;
+/* Weather background conditions */
+.sunny {
+    background: linear-gradient(to right, #f5af19, #f12711); /* Warm sunny tones */
+}
+.rainy {
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Cool rainy tones */
+}
+.cloudy {
+    background: linear-gradient(to right, #bdc3c7, #2c3e50); /* Dark cloudy tones */
+}
+.snowy {
+    background: linear-gradient(to right, #e0eafc, #cfdef3); /* Light snowy tones */
+}
+.default {
+    background: linear-gradient(to right, #74ebd5, #acb6e5); /* Default background */
 }
 
-.search-bar input{
-    height: 50px;
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    padding-left: 25px;
-    color: #626262;
-    background: #ebfffc;
-    font-size: 18px;
-}
-
-.search-bar img{
-    width: 50px;
-    padding: 15px;
-    border-radius: 50%;
-    background: #ebfffc;
-    cursor: pointer;
-}
-
-.weather-icon{
-    width: 150px;
-    margin: 30px 0px;
-}
-
-.temperature{
-    color: white;
-    font-size: 80px;
-    line-height: 1;
-}
-
-.location{
-    color:white;
-    font-size: 40px;
-}
-
-.weather-data{
-    width: 100%;
-    margin-top: 40px;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-}
-
-.weather-data .col{
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 22px;
-
-}
-
-.weather-data .col span{
-    display: block;
-    font-size: 16px;
-}
-
-.weather-data .col img{
-    width: 26px;
-    margin-top: 10px;
-=======
-.weather{
-    place-self: center;
-    padding: 40px;
-    border-radius: 10px;
-    background-image: linear-gradient(45deg, #2f4680, #500ae4);
+/* Weather app container */
+.weather-app {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    transition: background 0.5s ease;
 }
 
-.search-bar{
+/* Weather card styling */
+.weather-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 250px;
+    margin: 10px;
+}
+.weather-card h3 {
+    margin: 10px 0;
+    font-size: 2rem;
+}
+.weather-card img {
+    width: 100px;
+    height: 100px;
+}
+.weather-card .temperature {
+    font-size: 2.5rem;
+    color: #ff6b6b;
+}
+
+/* Temperature change buttons */
+.weather-card button {
+    padding: 10px;
+    background-color: #4ecdc4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.weather-card button:hover {
+    background-color: #2b8a83;
+    transform: scale(1.05);
+}
+
+/* Search bar */
+.search-bar {
     display: flex;
     align-items: center;
     gap: 12px;
 }
-
-.search-bar input{
+.search-bar input {
     height: 50px;
     border: none;
     outline: none;
@@ -101,8 +92,7 @@
     background: #ebfffc;
     font-size: 18px;
 }
-
-.search-bar img{
+.search-bar img {
     width: 50px;
     padding: 15px;
     border-radius: 50%;
@@ -110,23 +100,27 @@
     cursor: pointer;
 }
 
-.weather-icon{
+/* Weather icon */
+.weather-icon {
     width: 150px;
     margin: 30px 0px;
 }
 
-.temperature{
+/* Temperature display */
+.temperature {
     color: white;
     font-size: 80px;
     line-height: 1;
 }
 
-.location{
-    color:white;
+/* Location display */
+.location {
+    color: white;
     font-size: 40px;
 }
 
-.weather-data{
+/* Weather data section */
+.weather-data {
     width: 100%;
     margin-top: 40px;
     color: white;
@@ -134,21 +128,77 @@
     justify-content: space-between;
 }
 
-.weather-data .col{
+.weather-data .col {
     display: flex;
     align-items: flex-start;
     gap: 12px;
     font-size: 22px;
-
 }
 
-.weather-data .col span{
+.weather-data .col span {
     display: block;
     font-size: 16px;
 }
 
-.weather-data .col img{
+.weather-data .col img {
     width: 26px;
     margin-top: 10px;
->>>>>>> 0f10661 (Initial commit)
+}
+
+/* Background and button styling for the entire page */
+body {
+    background-image: url('../assets/background.png'); /* Make sure the path is correct */
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    color: #fff; /* White text for readability */
+}
+
+/* General button styling */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .weather-card {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .weather-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .weather-card .temperature {
+        font-size: 2rem;
+    }
+
+    .weather-app {
+        padding: 20px;
+    }
+
+    body {
+        background-size: cover;
+        background-position: center;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+        font-size: 18px;
+    }
 }
